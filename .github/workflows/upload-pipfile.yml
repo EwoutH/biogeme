@@ -13,7 +13,5 @@ jobs:
     - run: pipenv lock
     - uses: actions/upload-artifact@v2
       with:
-        - name: "Pipfile"
-          path: Pipfile
-        - name: "Pipfile lock"
-          path: Pipfile.lock
+        - name: "Pipfiles"
+          path: Pipfile*
