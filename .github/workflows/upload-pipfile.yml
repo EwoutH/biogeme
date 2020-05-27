@@ -1,5 +1,5 @@
 name: "Upload pipfile"
-on: [push, pull]
+on: [push, pull_request]
 
 jobs:
   piplock:
