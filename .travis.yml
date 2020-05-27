@@ -2,4 +2,5 @@ language: python
 dist: bionic
 python: 3.8
 script:
+  - python setup.py
   - pytest
