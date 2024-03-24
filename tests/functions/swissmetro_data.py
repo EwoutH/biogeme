@@ -11,13 +11,17 @@ import pandas as pd
 import biogeme.database as db
 from biogeme.expressions import Variable
 
-# Set the working directory to the directory of this script, so that
-# the data file is found
+# Locate the script directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
-os.chdir(script_dir)
 
-# Read the data
-df = pd.read_csv('swissmetro.dat', sep='\t')
+# Construct the path to the data file relative to the script's location
+data_file_path = os.path.join(script_dir, '..', '..', 'src', 'biogeme', 'data', 'data', 'swissmetro.dat')
+
+# Correct the path to be absolute
+data_file_path = os.path.abspath(data_file_path)
+
+# Read the data without changing the working directory
+df = pd.read_csv(data_file_path, sep='\t')
 database = db.Database('swissmetro', df)
 
 GROUP = Variable('GROUP')
